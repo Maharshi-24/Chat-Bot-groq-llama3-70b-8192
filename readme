@@ -1,1 +1,61 @@
-hi
+This project is an AI-powered conversational chatbot built using Streamlit, LangChain, and Groq. It uses a conversational interface to interact with users in a friendly and engaging manner. The app leverages the LangChain framework to provide memory-augmented conversations with an AI model from Groq's API.
+
+Features
+* Responsive User Interface: Modern, dark-themed UI with customizable design for a polished look.
+* Conversational AI: Provides engaging and natural responses using a Groq-powered large language model.
+* Session State Management: Tracks conversation history to maintain continuity during interactions.
+* Message Styling: Chat messages include timestamps and are styled for a visually appealing chat experience.
+* Customizable Prompts: The assistant�s behavior is defined through a system message and customizable prompts.
+* Input Handling: User inputs are captured in real-time and responses are generated asynchronously.
+
+Prerequisites
+Before running the project, ensure you have:
+* Python 3.11.9+
+* Access to a valid Groq API key
+
+Installation
+1. Clone this repository:
+bash
+Copy code
+git clone https://github.com/your-repo/ai-chat
+cd ai-chat
+2. Create a virtual environment and activate it:
+bash
+Copy code
+python -m venv env
+source env/bin/activate  # On Windows use `env\Scripts\activate`
+3. Install the required packages:
+bash
+Copy code
+pip install -r requirements.txt
+
+Usage
+1. Obtain your Groq API key and replace the placeholder key in the code with your actual key:
+python
+Copy code
+groq_api_key = "your_groq_api_key_here"
+2. Run the Streamlit app:
+bash
+Copy code
+streamlit run app.py
+3. The chatbot interface will open in your default web browser. You can start chatting by entering messages in the input box.
+Project Structure
+* app.py: The main file that contains the Streamlit app code, UI customization, and chatbot logic.
+* requirements.txt: Specifies the dependencies required for the project.
+Configuration
+* System Prompt: Modify the behavior and tone of the AI assistant by changing the system_prompt variable.
+* Theme Customization: Adjust the CSS styles for a custom look and feel of the chatbot interface.
+Features Explained
+1. Conversational Chain
+The AI uses LangChain's ConversationChain with memory management to maintain context throughout the conversation. The ConversationBufferWindowMemory stores the last 10 interactions.
+2. Customizable Prompts
+The chatbot's responses are guided by a system message and templates defined using LangChain's prompt handling mechanisms.
+3. Session State Handling
+The app uses Streamlit's session state to maintain message history, enabling continuity and stateful interactions between user and AI.
+Troubleshooting
+If you encounter any issues:
+* Make sure your dependencies are correctly installed.
+* Verify your Groq API key.
+* Check your internet connection.
+* Refer to the Streamlit Documentation and LangChain Documentation for further assistance.
+
