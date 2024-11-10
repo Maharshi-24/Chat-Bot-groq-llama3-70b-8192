@@ -10,7 +10,7 @@ Features
 
 Prerequisites
 Before running the project, ensure you have:
-* Python 3.11.9+
+* Python 3.11.9
 * Access to a valid Groq API key
 
 Installation
@@ -37,7 +37,7 @@ groq_api_key = "your_groq_api_key_here"
 2. Run the Streamlit app:
 bash
 Copy code
-streamlit run app.py
+streamlit run chat_bot.py
 3. The chatbot interface will open in your default web browser. You can start chatting by entering messages in the input box.
 Project Structure
 * app.py: The main file that contains the Streamlit app code, UI customization, and chatbot logic.
