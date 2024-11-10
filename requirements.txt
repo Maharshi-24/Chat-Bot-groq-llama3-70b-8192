@@ -1,5 +1,5 @@
-streamlit==1.32.0
-groq==0.4.3
-langchain==0.1.12
-langchain-groq==0.0.5
-langchain-core==0.1.32
+streamlit
+groq
+langchain
+langchain-groq
+langchain-core
