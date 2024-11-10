@@ -195,7 +195,7 @@ if "messages" not in st.session_state:
     st.session_state.messages.append(welcome_message)
 
 def initialize_chat():
-    groq_api_key = "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"
+    groq_api_key = st.secrets["groq_api_key"]
     model = 'llama3-70b-8192'
     
     groq_chat = ChatGroq(
