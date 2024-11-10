@@ -1,0 +1,2 @@
+python -m pip install --upgrade pip setuptools
+python ver 3.11.9
