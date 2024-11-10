@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This project is an AI-powered conversational chatbot built using Streamlit, LangChain, and Groq. It uses a conversational interface to interact with users in a friendly and engaging manner. The app leverages the LangChain framework to provide memory-augmented conversations with an AI model from Groq's API.
 
 Features
@@ -59,3 +60,22 @@ If you encounter any issues:
 * Check your internet connection.
 * Refer to the Streamlit Documentation and LangChain Documentation for further assistance.
 
+=======
+AI Chat with Streamlit and LangChain
+This project is an AI-powered conversational chatbot built using Streamlit, LangChain, and Groq. It uses a conversational interface to interact with users in a friendly and engaging manner. The app leverages the LangChain framework to provide memory-augmented conversations with an AI model from Groq's API.
+
+Features
+Responsive User Interface: Modern, dark-themed UI with customizable design for a polished look.
+Conversational AI: Provides engaging and natural responses using a Groq-powered large language model.
+Session State Management: Tracks conversation history to maintain continuity during interactions.
+Message Styling: Chat messages include timestamps and are styled for a visually appealing chat experience.
+Customizable Prompts: The assistant’s behavior is defined through a system message and customizable prompts.
+Input Handling: User inputs are captured in real-time and responses are generated asynchronously.
+Prerequisites
+Before running the project, ensure you have:
+
+Python 3.7+
+Streamlit installed
+LangChain installed
+Access to a valid Groq API key
+>>>>>>> bd8207b46fd98c0e02dc7a48a7a3db29e1ab0850
