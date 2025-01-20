@@ -194,6 +194,9 @@ if "messages" not in st.session_state:
     }
     st.session_state.messages.append(welcome_message)
 
+if "memory" not in st.session_state:
+    st.session_state.memory = ConversationBufferWindowMemory(k=10, memory_key="chat_history", return_messages=True)
+
 def initialize_chat():
     groq_api_key = st.secrets["groq_api_key"]
     model = 'llama3-70b-8192'
@@ -205,8 +208,6 @@ def initialize_chat():
     
     system_prompt = """You are a helpful and engaging AI assistant. Provide clear, thoughtful responses while maintaining a natural conversational tone."""
     
-    memory = ConversationBufferWindowMemory(k=10, memory_key="chat_history", return_messages=True)
-    
     prompt = ChatPromptTemplate.from_messages([
         SystemMessage(content=system_prompt),
         MessagesPlaceholder(variable_name="chat_history"),
@@ -214,10 +215,10 @@ def initialize_chat():
     ])
     
     return LLMChain(
-        llm=groq_chat,
+        llm=groq_chat, 
         prompt=prompt,
         verbose=False,
-        memory=memory,
+        memory=st.session_state.memory,
     )
 
 def main():
@@ -272,7 +273,7 @@ def main():
                     st.markdown(response)
                     st.markdown(f"<div class='message-timestamp'>{datetime.datetime.now().strftime('%H:%M')}</div>", unsafe_allow_html=True)
         except Exception as e:
-            st.error("I apologize, but I encountered an error. Please try again.")
+            st.error(f"I apologize, but I encountered an error: {e}. Please try again.")
 
 if __name__ == "__main__":
     main()
