@@ -255,7 +255,7 @@ def initialize_chat():
         verbose=False,
         memory=st.session_state.memory,
     )
-    
+
 def main():
     # Custom header
     st.markdown("""
@@ -306,7 +306,7 @@ def main():
                     response = conversation.predict(human_input=prompt)
                     # Split into sentences and limit to 4 sentences for a small paragraph
                     sentences = response.split(". ")
-                    concise_response = ". ".join(sentences[:4]) + ("." if len(sentences) > 4 else "")
+                    concise_response = ". ".join(sentences[:7]) + ("." if len(sentences) > 7 else "")
                     
                     st.session_state.messages.append({
                         "role": "assistant",
