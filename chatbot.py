@@ -11,6 +11,7 @@ from langchain.chains.conversation.memory import ConversationBufferWindowMemory
 from langchain_groq import ChatGroq
 from langchain.prompts import PromptTemplate
 import datetime
+import time
 
 # Set page config
 st.set_page_config(
@@ -255,6 +256,8 @@ def initialize_chat():
         memory=st.session_state.memory,
     )
 
+import time
+
 def main():
     # Custom header
     st.markdown("""
@@ -297,14 +300,22 @@ def main():
         
         try:
             with st.chat_message("assistant"):
-                with st.spinner(""):
+                with st.spinner("Thinking..."):
+                    # Simulate a delay before replying
+                    time.sleep(2)  # Adjust the delay time as needed
+                    
+                    # Generate a concise but meaningful response (1 paragraph)
                     response = conversation.predict(human_input=prompt)
+                    # Split into sentences and limit to 4 sentences for a small paragraph
+                    sentences = response.split(". ")
+                    concise_response = ". ".join(sentences[:4]) + ("." if len(sentences) > 4 else "")
+                    
                     st.session_state.messages.append({
                         "role": "assistant",
-                        "content": response,
+                        "content": concise_response,
                         "timestamp": datetime.datetime.now().strftime("%H:%M")
                     })
-                    st.markdown(response)
+                    st.markdown(concise_response)
                     st.markdown(f"<div class='message-timestamp'>{datetime.datetime.now().strftime('%H:%M')}</div>", unsafe_allow_html=True)
         except Exception as e:
             st.error(f"I apologize, but I encountered an error: {e}. Please try again.")
