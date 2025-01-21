@@ -255,9 +255,7 @@ def initialize_chat():
         verbose=False,
         memory=st.session_state.memory,
     )
-
-import time
-
+    
 def main():
     # Custom header
     st.markdown("""
