@@ -1,4 +1,4 @@
-Here’s the updated **README** with the correct live project link, email, and LinkedIn:
+
 
 ---
 
@@ -111,9 +111,7 @@ You can check the dependencies listed in the `requirements.txt` file.
 For more information or any queries, feel free to reach out:
 
 - **Email**: [maharshi2406@gmail.com](mailto:maharshi2406@gmail.com)
-- **GitHub**: [Maharshi2406](https://github.com/yourusername)
 - **LinkedIn**: [Maharshi Desai](https://www.linkedin.com/in/maharshi-desai-30143a279/)
 
 ---
 
-This README now includes the updated contact info and the live demo link! Let me know if you need further tweaks.
